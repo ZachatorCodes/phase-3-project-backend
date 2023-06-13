@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2023_06_13_024724) do
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "trail_id"
     t.integer "rating"
     t.string "comment"
+    t.integer "trail_id"
   end
 
   create_table "trails", force: :cascade do |t|
