@@ -8,12 +8,18 @@ class ApplicationController < Sinatra::Base
 
   get "/trails" do
     trails = Trail.all
-    trails.to_json(include: :reviews)
+    trails.to_json
   end
 
-  get "/trails/:id" do
-    trail = Trail.all.find(params[:id])
-    trail.to_json(include: :reviews)
+  post "/trails" do
+    new_trail = Trail.create({
+      trail_name: params[:trail_name],
+      length: params[:length],
+      elevation: params[:elevation],
+      location: params[:location],
+      difficulty: params[:difficulty]
+    })
+    new_trail.to_json
   end
 
 end
