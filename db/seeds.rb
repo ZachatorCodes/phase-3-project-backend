@@ -41,7 +41,7 @@ Trail.create([
     length: 3.2,
     elevation: 1099,
     location: "Lory State Park",
-    difficulty: "Moderate"
+    difficulty: "Medium"
   },
   {
     trail_name: "Sky Pond via Glacier Gorge Trail",
