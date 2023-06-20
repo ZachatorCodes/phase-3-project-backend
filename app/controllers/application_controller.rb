@@ -23,4 +23,16 @@ class ApplicationController < Sinatra::Base
     new_trail.to_json
   end
 
+  patch '/trails/:id' do
+    trail_to_update = Trail.find(params[:id])
+    trail_to_update.update({
+      trail_name: params[:trail_name],
+      length: params[:length],
+      elevation: params[:elevation],
+      location: params[:location],
+      difficulty: params[:difficulty]
+    })
+    trail_to_update.to_json
+  end
+
 end
