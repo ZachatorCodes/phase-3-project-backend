@@ -8,7 +8,13 @@ class ApplicationController < Sinatra::Base
 
   get "/trails" do
     trails = Trail.all
-    trails.to_json
+    trails.to_json(include: :reviews)
+  end
+
+  delete '/trails/:id' do
+    trail_to_delete = Trail.find(params[:id])
+    trail_to_delete.destroy
+    trail_to_delete.to_json
   end
 
   post "/trails" do
