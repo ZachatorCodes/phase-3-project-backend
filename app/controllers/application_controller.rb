@@ -1,9 +1,18 @@
+require "pry"
+
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
+
+  # Trail Routes
   
   get "/trails" do
     trails = Trail.all
     trails.to_json(include: :reviews)
+  end
+
+  get "/trails/:id" do
+    trail = Trail.find(params[:id])
+    trail.to_json(include: :reviews)
   end
 
   delete '/trails/:id' do
@@ -33,6 +42,18 @@ class ApplicationController < Sinatra::Base
       difficulty: params[:difficulty]
     })
     trail_to_update.to_json
+  end
+
+  # Review Routes
+
+  post '/trails/:trail_id/reviews' do
+    # binding.pry
+    new_review = Review.create({
+      rating: params[:rating],
+      comment: params[:comment],
+      trail_id: params[:trail_id]
+    })
+    new_review.to_json
   end
 
 end
