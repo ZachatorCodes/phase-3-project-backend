@@ -11,7 +11,7 @@ Bunk Trail Reviews is a web application that can be used to store information ab
 
 - If an error is encountered running `bundle exec rake server`, please run `bundle install` to install the required dependencies, then try running `bundle exec rake server` once more.
 
-- To make sure that the frontend portion of the application works, you must fork and clone the [frontend repository](https://github.com/ZachatorCodes/phase-3-project-frontend), and then start the frontend server with using the `npm start` command. Further instructions for installing and running the frontend can be found in the README file of the [frontend repository](https://github.com/ZachatorCodes/phase-3-project-frontend).
+- Further instructions for installing and running the frontend portion of the application can be found in the README file of the [frontend repository](https://github.com/ZachatorCodes/phase-3-project-frontend).
 
 ## Usage
 
