@@ -29,7 +29,7 @@ class ApplicationController < Sinatra::Base
       location: params[:location],
       difficulty: params[:difficulty]
     })
-    new_trail.to_json
+    new_trail.to_json(include: :reviews)
   end
 
   patch '/trails/:id' do
